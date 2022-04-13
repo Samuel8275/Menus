@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url(img/Ibai-Llanos.jpeg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.logo {
+    width: 120px;
+    padding-top: .5em;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 8vh;
+    background-color: #294674;
+}
+
+/* Button */
+
+.ham {
+    display: none;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.ham span {
+    display: block;
+    background-color: #f3f3f3;
+    height: .2em;
+    width: 1.65em;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Enlazes */
+
+.enlaces-menu {
+    display: flex;
+    padding: 0;
+}
+
+.enlaces-menu li {
+    padding: 0 2.5em;
+    list-style: none;
+    transition: .3s;
+}
+
+.enlaces-menu li a {
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #f3f3f3;
+    font-weight: 600;
+}
+
+.enlaces-menu li:hover {
+    background-color: rgb( 62, 130, 197);
+}
+
+/* Dispositivos Mobiles */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .logo {
+        padding: 0 0 0 25px;
+    }
+
+    .ham {
+        display: block;
+        position: absolute;
+        top: 2.2em;
+        right: 25px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 0;
+    }
+
+    .enlaces-menu {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 92vh;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: none;
+        opacity: 0;
+    }
+
+    .enlaces-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 1.8em;
+    }
+}
+
+/* Animaciones */
+
+@keyframes opacity {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* Activar */
+
+.enlaces-menu.activado {
+    display: flex;
+    animation: opacity .8s ease-in-out both;
+}

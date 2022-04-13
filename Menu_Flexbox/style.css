@@ -1,0 +1,120 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #f4f4f4;
+}
+
+.menu {
+    background: crimson;
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+    box-shadow: 10px 0 10px rgba( 0, 0, 0, .6);
+}
+
+.logo {
+    font-size: 35px;
+    padding: 0 80px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: white;
+}
+
+.menu_lista {
+    display: flex;
+    list-style: none;
+    margin-right: 30px;
+}
+
+.menu_lista li {
+    margin: 0 15px;
+    border-radius: 3px;
+}
+
+.menu_lista li a {
+    color: white;
+    padding: 7px 13px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.menu_lista li:hover, li.active {
+    background-color: rgba(0, 0, 0, .4);
+    transition: .5s;
+}
+
+.btn_menu {
+    margin-right: 30px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+ul.show {
+    top: 65px;
+}
+
+@media screen and (max-width: 952px){
+    .logo {
+        font-size: 30px;
+        padding-left: 35px;
+    }
+    .menu_lista li a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 858px) {
+    .menu {
+        height: 65px;
+    }
+    .btn_menu {
+        display: inline-flex;
+    }
+    .menu_lista {
+        position: fixed;
+        width: 100vw;
+        height: calc(100% - 65px);
+        background: #414141;
+        top: -100vh;
+        text-align: center;
+        transition: all .4s;
+        flex-direction: column;
+    }
+    .menu_lista li {
+        margin-top: 30px;
+        line-height: 30px;
+    }
+    .menu_lista li:hover {
+        background: none;
+    }
+    .menu_lista li a {
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+    }
+    .menu_lista li a:hover {
+        color: crimson;
+    }
+    .logo {
+        font-size: 25px;
+        padding-left: 35px;
+    }
+}
+
+@media screen and (max-width: 858px) and (orientation: landscape) {
+    .menu_lista li {
+        margin: 5px 0 0 0;
+    }
+    .menu_lista {
+        overflow: scroll;
+        height: calc(100% - 65px);
+    }
+}
